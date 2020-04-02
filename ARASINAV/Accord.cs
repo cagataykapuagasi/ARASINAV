@@ -17,7 +17,7 @@ namespace ARASINAV
         }
 
       
-        void init()
+        void init() //https://github.com/accord-net/framework/wiki/Classification kütüphane
         {
             Console.Write("Training...");
             List<double[]> list = new List<double[]>();
@@ -45,11 +45,13 @@ namespace ARASINAV
                 }
             };
 
-            var svm = teacher.Learn(list.ToArray(), outputsList.ToArray());
+            var svm = teacher.Learn(list.ToArray(), outputsList.ToArray()); //çift boyutlu double dizisi şeklinde girdi ve çıktılar
 
             Console.WriteLine("Ok.");
 
-            int[] answers = svm.Decide(testList.ToArray());
+            int[] answers = svm.Decide(testList.ToArray()); //sonuçların bulunması
+
+            Console.WriteLine();
 
             for(int i = 0;i< answers.Length;i++)
             {

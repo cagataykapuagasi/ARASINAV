@@ -35,12 +35,12 @@ namespace ARASINAV
                 stop_words.AddRange(File.ReadLines("stop-words.txt"));
 
 
-                readAndHandle("1");
+                readAndHandle("1"); //eski projedeki veriler eğitim için kullanıldı.
                 readAndHandle("2");
                 readAndHandle("3");
-                readAndHandle("metinler");
+                readAndHandle("metinler"); //yeni veriler ise test için
 
-                foreach (Column c in list) {
+                foreach (Column c in list) { //her satır için tüm kelimeler koyulup binary şeklinde yapıldı.
                     c.totalWords = totalWords;
                     c.handleTotalWords();
                 }

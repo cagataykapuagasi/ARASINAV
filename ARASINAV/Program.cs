@@ -10,23 +10,17 @@ namespace ARASINAV
     {
         static void Main(string[] args)
         {
-            Data data = new Data();
-            //Accord accord = new Accord();
-
-            foreach(GuessWord g in Data.guessWords)
-            {
-               // Console.WriteLine(g.name);
-            }
+            Data data = new Data(); //verilerin işlendiği class
+            Accord accord = new Accord(); //test datalarının tahmin yapıldığı class
 
             getWordFromUser();
-
-            
 
             Console.Read();
         }
 
-        static void getWordFromUser()
+        static void getWordFromUser() //kelimenin tahmini için
         {
+            Console.WriteLine();
             Console.WriteLine("Tahmin için kelime yazın yada çıkmak için 0 yazın: ");
             string word = Console.ReadLine();
 
@@ -39,9 +33,9 @@ namespace ARASINAV
             string theBiggestClass = "1";
             double p = 0;
 
-            for(int i = 1;i< 4; i++)
+            for(int i = 1;i< 4; i++) //tüm classlar gezilir ve en fazla sayıda olandan tahmin yapılır.
             {
-                GuessWord g = Data.guessWords.Find(x => x.name == word && x.className == $"{i}");
+                GuessWord g = Data.guessWords.Find(x => x.name == word && x.className == $"{i}"); 
                 if(g != null && g.count > theBiggest)
                 {
                     theBiggest = g.count;
