@@ -2,5 +2,5 @@
 
 University Assignment
 ```
-Download zip file  and open .sln file
+Download zip file and open .sln file
 ```
